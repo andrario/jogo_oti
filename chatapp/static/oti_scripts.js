@@ -18,7 +18,7 @@ document.getElementById("join-btn").addEventListener("click", function() {
 })
 
  document.getElementById("sortear").addEventListener("click", function (event) {
-    socket.emit("sortear", "ola");
+    socket.emit("sortear");
 })
 
 document.getElementById("cor").addEventListener("change", function (event) {
@@ -27,17 +27,13 @@ document.getElementById("cor").addEventListener("change", function (event) {
     document.getElementById("verso").style.backgroundColor = cor;
 })
 
-// document.getElementById("carta").addEventListener("click", function (event) {
-//     let estado = document.getElementById("numeroCarta").style.display
-//     if(estado!="none"){
-//         document.getElementById("numeroCarta").style.display = "none";
-//     }
-//     else{
-//         document.getElementById("numeroCarta").style.display = "inline-block";
-//     }
-// })
+document.getElementById("corTexto").addEventListener("change", function (event) {
+    let cor = document.getElementById("corTexto").value
+    document.getElementById("cartaFace").style.color = cor;
+    document.getElementById("numeroCarta").style.color = cor;
+})
 
-socket.on("chat", function(data) {
+socket.on("numeroSorteado", function(data) {
     console.log(data)
     document.getElementById("numeroCarta").innerHTML = data["message"]
 })
@@ -56,6 +52,9 @@ function setup(){
     let cor = document.getElementById("cor").value
     document.getElementById("frente").style.backgroundColor = cor;
     document.getElementById("verso").style.backgroundColor = cor;
+    document.getElementById("corTexto").value = "#ffffff"
+    document.getElementById("cartaFace").style.color = "#ffffff";
+    document.getElementById("numeroCarta").style.color = "#ffffff";
     document.getElementById("numeroCarta").style.display = "inline-block";
 }
 setup()

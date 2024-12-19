@@ -17,9 +17,9 @@ def handle_user_join(username):
     users[request.sid] = {"nome":username, "numero":0}
 
 @socketio.on("sortear")
-def handle_new_message(message):
-    print(f"New message: {message}")
-    username = None
+def handle_new_message():
+    # print(f"New message: {message}")
+    # username = None
     
     sorteados = []
     for user in users:
@@ -27,7 +27,7 @@ def handle_new_message(message):
         while True:
             valor = randint(1,100)
             if valor not in sorteados:
+                sorteados.append(valor)
                 break
         users[user]["numero"] = valor
-        print(users)
-        emit("chat", {"message": str(valor), "username": users[user]["nome"]}, to=user)
+        emit("numeroSorteado", {"message": str(valor)}, to=user)

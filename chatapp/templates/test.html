@@ -10,15 +10,29 @@
 </head>
 <body>
     <div id="landing">
+        <h1>OTI</h1>
+        <img src="/static/qr.png">
         <input type="text" id="username" placeholder="Username">
         <button id="join-btn">JOIN</button>
     </div>
-
-    <div id="chat" style="display:none;">
-
-        <ul id="chat-messages">
-        </ul>
-        <input type="text" id="message" placeholder="Enter a Message">
+    <div id="jogo" style="display:block;">
+        <div class="centro">
+            <input type="color" id="cor" style="display: block;">
+            <input type="color" id="corTexto" style="display: block;">
+        </div>
+        
+        <div id="carta" class="caixa-carta">
+            <div id="flip-card" class="carta-conteudo">
+                <div id="frente" class="carta-conteudo-frente">
+                    <span id="cartaFace">OTI</span>
+                </div>
+                <div id="verso" class="carta-conteudo-verso">
+                    <span id="numeroCarta">0</span>
+                </div>
+            </div>
+        </div>
+        <!-- <input type="text" id="message" placeholder="Enter a Message"> -->
+        <button id="sortear">Sortear</button>
     </div>
     <script src="/static/oti_scripts.js"></script>
 </body>

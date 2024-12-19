@@ -15,7 +15,7 @@ h1 {
 }
 
 #jogo input {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 99%;
 }
 
@@ -27,8 +27,8 @@ h1 {
     gap: 10px;
 }
 
-#cor {
-    margin-bottom: 2vh;
+input[type="color"] {
+    margin-bottom: 5px;
 }
 
 #numeroCarta, #cartaFace {
@@ -38,7 +38,7 @@ h1 {
 }
 
 #numeroCarta {
-    margin-top: 25vmax;
+    margin-top: 22vmax;
     font-size: 35vw;
 }
 
@@ -57,9 +57,10 @@ h1 {
 .caixa-carta {
     background-color: transparent;
     width: 100%;
+    margin-top: 10px;
     /* height: 120vw; */
-    height: 70vmax;
-    perspective: 1000px;
+    height: 65vmax;
+    perspective: 2000px;
 }
 
 .carta-conteudo {
@@ -78,6 +79,7 @@ h1 {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 40px;
 }
 
 .carta-conteudo-frente {
