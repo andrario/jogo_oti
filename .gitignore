@@ -1,0 +1,3 @@
+venv/*
+chatapp/static/qr.png
+chatapp/__pycache__/*
